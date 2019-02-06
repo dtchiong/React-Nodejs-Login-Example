@@ -1,0 +1,20 @@
+.form-login-container {
+
+    background: grey;
+    height: 100vh;
+    /*
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    */
+}
+
+.form-login {
+    vertical-align: middle;
+    background:white;
+
+}
+
+.form-login h1 {
+    text-align: center;
+}

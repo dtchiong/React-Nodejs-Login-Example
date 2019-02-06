@@ -44,12 +44,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="header">
-          <h1>React</h1>
-          <h1>Nodejs</h1>
-          <h2>with Firebase Authentication</h2>
-          <h6>Example App</h6>
+      <div className="App container-fluid px-0">
+        <div className="app-header">
+          <h1 id="text-react">React</h1>
+          <h1 id="text-nodejs">Nodejs</h1>
+          <h1 className="header-subtitle">Login Example App</h1>
         </div>
         {this.state.user? <Home></Home> : <LoginController></LoginController>}
       </div>

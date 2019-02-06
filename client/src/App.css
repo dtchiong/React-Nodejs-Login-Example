@@ -1,5 +1,31 @@
 .App {
+  background: #1e2228;
+  height: 100vh;
+}
+
+.app-header {
   text-align: center;
+  background: #060c1e;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#text-react {
+  display: inline;
+  color: #b2f6ff;
+  font-size: 50px;
+  margin-right: 15px;
+}
+
+#text-nodejs {
+  display: inline;
+  color: #60b230;
+  font-size: 50px;
+}
+
+.header-subtitle {
+  color: white;
+  font-size: 20px;
 }
 
 .App-link {
