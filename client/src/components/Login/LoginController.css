@@ -1,20 +1,30 @@
-.form-login-container {
-
-    background: grey;
-    height: 100vh;
-    /*
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    */
+.form-login-wrapper {
+    /* We need to calculate the height of the content below the header
+     * using only 100vh will make the form as tall as the viewport, which 
+     * when combined with the header, will add unneccesary scroll bars
+     */
+    height: calc(100vh - 112px);
 }
 
 .form-login {
     vertical-align: middle;
     background:white;
-
+    padding: 20px;
+    width: 300px;
 }
 
 .form-login h1 {
     text-align: center;
+    padding: 10px;
+}
+
+#login-button-border {
+    border-top: 1px solid grey;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .form-login {
+        width: 500px;
+    }
 }
