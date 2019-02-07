@@ -25,10 +25,7 @@ class App extends Component {
   authListener = () => {
     fire.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log("user is not null");
         this.setState({ user: user });
-      } else {
-        console.log("user is null");
       }
     });
   };

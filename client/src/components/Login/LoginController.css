@@ -23,6 +23,23 @@
     padding-bottom: 10px;
 }
 
+#login-error-text-wrapper {
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+#login-error-text {
+    flex: 20px; /* keeps message on the same line as icon for mobile */
+    color:red;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+.glyph-error {
+    color: red;
+    display: inline-block;
+}
+
 @media screen and (min-width: 768px) {
     .form-login {
         width: 500px;
