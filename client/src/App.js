@@ -47,7 +47,10 @@ class App extends Component {
           <h1 id="text-nodejs">Nodejs</h1>
           <h1 className="header-subtitle">Login Example App</h1>
         </div>
-        {this.state.user? <Home></Home> : <LoginController></LoginController>}
+
+        <div className="page-content-wrapper">
+          {this.state.user? <Home></Home> : <LoginController></LoginController>}
+        </div>  
       </div>
     );
   }

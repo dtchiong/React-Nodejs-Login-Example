@@ -32,3 +32,10 @@
   color: #61dafb;
 }
 
+/* We need to calculate the height of the content below the header (112px)
+ * Using only 100vh will make the form as tall as the viewport, which 
+ * when combined with the header, will add unneccesary scroll bars
+ */
+.page-content-wrapper {
+  height: calc(100vh - 112px);
+}

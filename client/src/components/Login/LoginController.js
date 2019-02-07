@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Row } from "react-bootstrap";
 import fire from "../../config/fire";
-
 import "./LoginController.css";
 
 class LoginController extends Component {
@@ -34,7 +33,6 @@ class LoginController extends Component {
     }
   };
 
-
   /* Shows an error message if login fails, otherwise nothing */
   showLoginStatus = () => {
     let style = {display: "none"}
@@ -63,8 +61,8 @@ class LoginController extends Component {
 
   render() {
     return (
-      <div className="form-login-wrapper d-flex align-items-center d-flex justify-content-center">
-        <Form className="form-login " >
+      <div className="page-wrapper d-flex align-items-center d-flex justify-content-center">
+        <Form className="form-login">
           <h1>Login</h1>
           <Form.Group controlId="formGroupUsername">
             <Form.Label>Username</Form.Label>
@@ -74,7 +72,6 @@ class LoginController extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-
           <Form.Group controlId="formGroupPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
