@@ -10,11 +10,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let count = 0;
 
 /* API CALLS */
+app.get('/api/count/get', (req, res) => {
+  res.json({count: count});
+});
 
 app.post('/api/count/increment', (req, res) => {
   console.log(req.body);
   count = Math.max(1, count * 2);
-  res.json({count: count})
+  res.json({count: count});
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

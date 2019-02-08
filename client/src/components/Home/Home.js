@@ -9,6 +9,18 @@ class Home extends Component {
     buttonClicked: false
   };
 
+  /* Fetches the count so that if the user refreshes the page,
+   * the count still shows the current value
+   */
+  componentDidMount() {
+    requests.getCount(null)
+      .then( (res) =>{
+        this.setState( {count: res.count} );
+      })
+      .catch ( (res) => {
+      });
+  }
+
   handleButtonIncrement = () => {
     this.setState({ buttonClicked: true });
     requests.incrementCount(null)
@@ -20,11 +32,11 @@ class Home extends Component {
   }
 
   incrementButton = () => {
-    let disabledStatus = "";
+    let disabledStatus = false;
     let buttonText = "Increment";
 
     if (this.state.buttonClicked) {
-      disabledStatus = "true";
+      disabledStatus = true;
       buttonText = "...Processing";  
     }
 
