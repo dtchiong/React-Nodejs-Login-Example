@@ -1,0 +1,16 @@
+.count-wrapper {
+    background: white;
+    border-radius: 5px;
+}
+
+#count-label {
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 20px;
+    font-size: 20px;
+}
+
+#increment-btn {
+    border-radius: 0px 5px 5px 0px;
+}

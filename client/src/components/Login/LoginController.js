@@ -26,7 +26,7 @@ class LoginController extends Component {
         this.setState( {username: val} );
         break;
       case "formGroupPassword":
-        this.setState( {password: val } );
+        this.setState( {password: val} );
         break;
       default:
         break;
