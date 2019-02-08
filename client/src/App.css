@@ -39,3 +39,26 @@
 .page-content-wrapper {
   height: calc(100vh - 112px);
 }
+
+.img-wrapper {
+  /*inherits from .page-content-wrapper */
+  height: inherit; 
+}
+
+img.app-loading-wheel {
+  height: 200px;
+  width: 200px;
+  animation: rotate 2s infinite linear;
+  /* Setting left and right margins to auto makes this horizontally centered */
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

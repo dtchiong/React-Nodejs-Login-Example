@@ -10,6 +10,7 @@ class LoginController extends Component {
     lastLoginAttemptStatus: ""
   };
 
+  /* onClick for the login button. Sets the login status if login fails */
   login = () => {
     fire.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
       .catch( (error) => {
@@ -82,7 +83,7 @@ class LoginController extends Component {
             </Form.Control>
           </Form.Group>
           <div id="login-button-border"></div>
-          <Button variant="primary" block onClick={()=>{this.login()}}>Log In</Button>
+          <Button variant="primary" block onClick={() => { this.login() }}>Log In</Button>
           {this.showLoginStatus()}
         </Form>
       </div>
