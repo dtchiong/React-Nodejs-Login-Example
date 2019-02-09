@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
+import ModalConfirm from "./ModalConfirm/ModalConfirm";
 import "./Home.css";
 import requests from "../../utility/Requests";
 
 class Home extends Component {
   state = {
     count: 0,
-    buttonClicked: false
+    buttonClicked: false,
+    showModal: false,
   };
 
   /* Fetches the count so that if the user refreshes the page,
@@ -22,7 +24,8 @@ class Home extends Component {
       });
   }
 
-  handleButtonIncrement = () => {
+  /* Passed to the modal to increment count when the confirm button is clicked */
+  incrementCount = () => {
     this.setState({ buttonClicked: true });
     requests.incrementCount(null)
       .then( (res) =>{
@@ -32,6 +35,7 @@ class Home extends Component {
       });
   }
 
+  /* Functional component for the Increment button */
   incrementButton = () => {
     let disabledStatus = false;
     let buttonText = "Increment";
@@ -48,6 +52,16 @@ class Home extends Component {
     );
   }
 
+  /* Shows the Modal to confirm confirm increment */
+  handleButtonIncrement = () => {
+    this.setState( {showModal:  true} );
+  }
+
+  /* Closes the modal if it's cancelled */
+  closeModal = () => {
+    this.setState( {showModal: false} );
+  }
+
   render() {
     return (
       <div className="page-wrapper d-flex align-items-center d-flex justify-content-center">
@@ -58,7 +72,16 @@ class Home extends Component {
           <Col className="d-flex align-items-stretch">
             {this.incrementButton()}
           </Col>
+          <Col className="page-wrapper d-flex align-items-center">
+            <ModalConfirm 
+            count={this.state.count}
+            show={this.state.showModal}
+            closeModal = {this.closeModal}
+            incrementCount = {this.incrementCount}
+            />
+          </Col>
         </Row>
+
       </div>
     );
   }
