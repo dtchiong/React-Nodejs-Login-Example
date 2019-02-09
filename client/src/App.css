@@ -32,12 +32,19 @@
   color: #61dafb;
 }
 
-/* We need to calculate the height of the content below the header(112px)
- * Using only 100vh will make the form as tall as the viewport, which 
- * when combined with the header, will add unneccesary scroll bars
+.nav-bar {
+  padding-right: 20px;
+  min-height: 38px;
+  background: #060c1e; /*#2d3542;*/ 
+}
+
+/* We need to calculate the height of the content below the header and the 
+ * navbar Using only 100vh will make the form as tall as the viewport,
+ * which when combined with the header, will add unneccesary scroll bars.
+ * 112px(Header) + 38px(navBar) = 150px
  */
 .page-content-wrapper {
-  height: calc(100vh - 112px);
+  height: calc(100vh - 150px);
 }
 
 .img-wrapper {

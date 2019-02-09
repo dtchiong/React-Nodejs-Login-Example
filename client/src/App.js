@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Row, Col } from "react-bootstrap";
 import fire from "./config/fire";
 import Home from "./components/Home/Home";
 import LoginController from "./components/Login/LoginController";
@@ -28,6 +29,17 @@ class App extends Component {
     });
   };
 
+  /* The onclick for the signout button */
+  signOut = () => {
+    fire.auth().signOut()
+      .then( () => {
+        this.setState( {user: null} )
+      })
+      .catch( (error)=> {
+        console.log(error);
+      })
+  }
+
   /* If logged into, prevents the login form from flashing before showing the home page when the auth
    * returns the user by showing a loading wheel. And if the user is logged in, we show the
    * Home page, otherwise we show the login form
@@ -51,6 +63,12 @@ class App extends Component {
           <h1 id="text-react">React</h1>
           <h1 id="text-nodejs">Nodejs</h1>
           <h1 className="header-subtitle">Login Example App</h1>
+        </div>
+        <div className="nav-bar">
+          <div className="d-flex justify-content-end">
+            {this.state.user? <Button variant="link" style={{color:"white"}} onClick={()=>{this.signOut()}}>Sign Out</Button> : <p></p>}
+            
+          </div>
         </div>
 
         <div className="page-content-wrapper">

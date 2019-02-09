@@ -7,13 +7,16 @@ class LoginController extends Component {
   state = {
     username: "",
     password: "",
-    lastLoginAttemptStatus: ""
+    lastLoginAttemptStatus: "",
+    loggingIn: false
   };
 
   /* onClick for the login button. Sets the login status if login fails */
   login = () => {
+    this.setState( {loggingIn: true} )
     fire.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
       .catch( (error) => {
+        this.setState( {loggingIn: false} )
         this.setState( {lastLoginAttemptStatus: error.code} );
       });
   }
@@ -83,7 +86,9 @@ class LoginController extends Component {
             </Form.Control>
           </Form.Group>
           <div id="login-button-border"></div>
-          <Button variant="primary" block onClick={() => { this.login() }}>Log In</Button>
+          <Button variant="primary" block onClick={() => { this.login() }}>
+            {this.state.loggingIn? "Authorizing . . ." : "Log In"}
+          </Button>
           {this.showLoginStatus()}
         </Form>
       </div>
