@@ -28,7 +28,6 @@ class App extends Component {
     });
   };
 
-
   /* If logged into, prevents the login form from flashing before showing the home page when the auth
    * returns the user by showing a loading wheel. And if the user is logged in, we show the
    * Home page, otherwise we show the login form
@@ -42,7 +41,7 @@ class App extends Component {
       );
     }
 
-    return (this.state.user? <Home></Home> : <LoginController></LoginController>);
+    return (this.state.user? <Home user={this.state.user}></Home> : <LoginController></LoginController>);
   }
 
   render() {

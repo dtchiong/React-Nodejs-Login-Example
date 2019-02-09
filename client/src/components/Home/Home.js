@@ -13,7 +13,8 @@ class Home extends Component {
    * the count still shows the current value
    */
   componentDidMount() {
-    requests.getCount(null)
+    const uid = this.props.user.uid;
+    requests.getCount(uid)
       .then( (res) =>{
         this.setState( {count: res.count} );
       })
